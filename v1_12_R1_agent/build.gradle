@@ -1,0 +1,7 @@
+plugins {
+    id 'java'
+    id 'com.nemosw.spigot-agent' version '1.0'
+}
+
+group 'com.nemosw.spigot'
+version '1.0'

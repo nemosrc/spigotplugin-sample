@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'com.nemosw.spigot-jar' version '1.0'
+}
+
+group = 'com.nemosw.spigot'
+version = '1.1'
+
+allprojects {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    group 'com.nemosw.spigot'
+    version '1.0'
+
+    repositories {
+        mavenLocal()
+    }
+
+    dependencies {
+        compileOnly 'org.spigotmc:spigot:1.12.2-R0.1-SNAPSHOT'
+    }
+}
+
+project(':core') {
+    dependencies {
+        compile project(':api')
+    }
+}
+
+project(':v1_12_R1') {
+    dependencies {
+        compile project(':api')
+    }
+}
